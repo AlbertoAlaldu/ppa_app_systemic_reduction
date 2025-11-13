@@ -1,100 +1,92 @@
-Autoreferential Protection – Replication Package
-Version: v1.0.0
-Author: Alberto Alejandro Duarte
-Contact: albertoduarte@paradoxsystems.xyz
+PPA/APP Replication Package — Systemic Reduction Analysis
+DOI: https://doi.org/10.5281/zenodo.17604852
 
-SUMMARY
 This repository contains the complete replication package for the paper:
-“The Autoreferential Protection Principle: Viability, Shielding, and the Reduction Paradox in Reflexive Agent–Environment Systems”.
 
-It includes:
+"The Autoreferential Protection Principle: Viability, Shielding, and the Reduction Paradox in Reflexive Agent–Environment Systems."
+Duarte, A. A. (2025). Zenodo. https://doi.org/10.5281/zenodo.17604852
 
-EV-02C and EV-04 simulation code
+It includes simulation code, configuration files, analysis scripts, stability metrics, perturbation results, and aggregated datasets used to generate all figures and tables in the manuscript.
+Raw tick-level logs are archived offline due to size constraints, but all results in the paper are reproducible with the content of this repository.
 
-Configuration files for all experiments
+CONTENTS
 
-Analysis scripts for mortality, stability, shielding (AIM-3), temporal coupling, phase-space structure, and Granger causality (AIM-4)
+Simulation Code
 
-Processed datasets used in all figures and tables
+ev04/: EV-04 architecture (APP-Fixed and VOFF)
 
-Ablation results for environmental-governor experiments
+ev02c/: EV-02C baseline configuration
 
-Aggregated metrics required for all statistical analyses
+run_ev04_cli.py: Command-line interface for full experimental batches
 
-Raw per-tick logs are archived offline due to size, but the full pipeline is reproducible using the files and scripts included here.
+simulation_app_base_v2_FINAL.py: Core implementation of APP
 
-REPOSITORY STRUCTURE
+Configuration Files
 
-simulation/
-simulation_app_base_v2_FINAL.py
+YAML configurations for AIM-1 to AIM-4
 
-config/
-config_summary.yaml
-config_v5_warmstart.yaml
+Warm-start and fixed-policy configurations
 
-scripts/
-analyze_aim12_from_ticks.py
-analyze_perturbation.py
-(future) analyze_granger.py
-(future) analyze_mb_shielding.py
+Environmental parameter sets for RE, RH, and RC regimes
 
-data/
-AIM3_mb_shielding.csv
-mortality_data_validated.csv
-stability_data_REAL.csv
-all_metrics_alivewin.csv
-granger_causality.zip
-granger_causality_ablation.zip
-phase_space_analysis.zip
-temporal_analysis.zip
+Analysis Scripts
 
-LICENSE
-CC BY-NC 4.0 (non-commercial use only)
+analyze_aim12_from_ticks.py: Mortality and viability structure
 
-REPRODUCIBILITY STATEMENT
-All results, figures, and tables in the manuscript can be reproduced using the simulation engine, configuration files, and analysis scripts in this repository. No proprietary software is required beyond standard Python scientific libraries.
-Each AIM (AIM-1 to AIM-4) maps directly to specific datasets and scripts provided here.
+analyze_perturbation.py: Stability and ablation analysis
 
-AIM MODULES
+granger/: Granger causality pipeline
 
-AIM-1: Mortality Partitioning
-Data: mortality_data_validated.csv
-Script: analyze_aim12_from_ticks.py
+Additional scripts for temporal coupling, lag, coherence, and shielding
 
-AIM-2: Stability Analysis
-Data: stability_data_REAL.csv
-Script: analyze_aim12_from_ticks.py
+Aggregated Datasets
 
-AIM-3: Markov-Blanket Shielding
-Data: AIM3_mb_shielding.csv
-Script: analyze_mb_shielding.py (to be added)
+Mortality partitioning
 
-AIM-4: Granger Causality
-Data: granger_causality.zip
-granger_causality_ablation.zip
-Script: analyze_granger.py (to be added)
+Stability metrics
 
-AIM-Aux: Temporal Coupling and Phase-Space Structure
-Data: temporal_analysis.zip
-phase_space_analysis.zip
+Markov-blanket shielding (AIM-3)
 
-HOW TO RUN THE SIMULATOR
+Perturbation and recovery results
 
-Example command:
-python simulation/simulation_app_base_v2_FINAL.py --regime RE --condition APP --T 4000
+Temporal phase-space reconstruction
 
-CONFIGURATION FILES
-All parameter sets used in the experiments are provided in the config folder.
+Granger causality matrices
+
+(Per-tick logs stored offline due to size limits.)
+
+REPRODUCIBILITY
+
+All plots, tables, and metrics from the paper can be reproduced using:
+
+python run_ev04_cli.py --regimes RE RH RC --conditions APP VOFF --seeds 0 1 2 3 4 5 6 7 8 9
+
+Analysis scripts in the analysis/ directory reproduce all reported figures and tablas.
 
 CITATION
-Please cite this replication package as:
 
-Duarte, A. A. (2025).
-PPA/APP Replication Package (Version v1.0.0). Zenodo. DOI: XXXXX
-(Replace XXXXX with the actual Zenodo DOI once generated.)
+If you use this package, please cite:
+
+Duarte, A. A. (2025). PPA/APP Replication Package (Version v1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.17604852
+
+BibTeX:
+
+@dataset{Duarte2025PPAAPP,
+author = {Duarte, Alberto Alejandro},
+title = {PPA/APP Replication Package (Version v1.0.1)},
+year = {2025},
+howpublished = {Zenodo},
+doi = {10.5281/zenodo.17604852},
+url = {https://doi.org/10.5281/zenodo.17604852}
+
+}
 
 LICENSE
-Creative Commons Attribution–NonCommercial 4.0.
-Academic and research use allowed.
-Commercial use prohibited without written permission.
 
+Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0).
+Non-commercial academic use is allowed.
+Commercial use requires prior written permission.
+
+CONTACT
+
+albertoduarte@paradoxsystems.xyz
