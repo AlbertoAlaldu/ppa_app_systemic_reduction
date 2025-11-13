@@ -24,29 +24,27 @@ Aggregated metrics required for all statistical analyses
 Raw per-tick logs are archived offline due to size, but the full pipeline is reproducible using the files and scripts included here.
 
 REPOSITORY STRUCTURE
+/
+├── LICENSE
+├── README.md
+├── simulation/
+│   └── simulation_app_base_v2_FINAL.py
+├── config/
+│   ├── config_summary.yaml
+│   └── config_v5_warmstart.yaml
+├── scripts/
+│   ├── analyze_aim12_from_ticks.py
+│   └── analyze_perturbation.py
+└── data/
+    ├── AIM3_mb_shielding.csv
+    ├── mortality_data_validated.csv
+    ├── stability_data_REAL.csv
+    ├── all_metrics_alivewin.csv
+    ├── granger_causality.zip
+    ├── granger_causality_ablation.zip
+    ├── phase_space_analysis.zip
+    └── temporal_analysis.zip
 
-simulation/
-simulation_app_base_v2_FINAL.py
-
-config/
-config_summary.yaml
-config_v5_warmstart.yaml
-
-scripts/
-analyze_aim12_from_ticks.py
-analyze_perturbation.py
-(future) analyze_granger.py
-(future) analyze_mb_shielding.py
-
-data/
-AIM3_mb_shielding.csv
-mortality_data_validated.csv
-stability_data_REAL.csv
-all_metrics_alivewin.csv
-granger_causality.zip
-granger_causality_ablation.zip
-phase_space_analysis.zip
-temporal_analysis.zip
 
 LICENSE
 CC BY-NC 4.0 (non-commercial use only)
