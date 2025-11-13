@@ -98,5 +98,3 @@ Creative Commons Attribution–NonCommercial 4.0.
 Academic and research use allowed.
 Commercial use prohibited without written permission.
 
-CONTACT
-albertoduarte@paradoxsystems.xyz
